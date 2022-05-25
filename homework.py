@@ -94,9 +94,9 @@ class SportsWalking(Training):
         coeff_calorie_3 = 0.035
         coeff_calorie_4 = 0.029
 
-        calories_walking = (coeff_calorie_3 * self.weight + (
-            self.get_mean_speed() ** 2 // self.height
-            ) * coeff_calorie_4 * self.weight) * (self.duration * 60)
+        calories_walking = ((coeff_calorie_3 * self.weight
+            + (self.get_mean_speed() ** 2 // self.height)
+            * coeff_calorie_4 * self.weight) * (self.duration * 60))
         return calories_walking
 
 
