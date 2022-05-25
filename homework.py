@@ -16,11 +16,11 @@ class InfoMessage:
 
     def get_message(self) -> str:
         return(
-        f'Тип тренировки: {self.training_type}; '
-        f'Длительность: {self.duration:.3f} ч.; '
-        f'Дистанция: {self.distance:.3f} км; '
-        f'Ср. скорость: {self.speed:.3f} км/ч; '
-        f'Потрачено ккал: {self.calories:.3f}.')
+            f'Тип тренировки: {self.training_type}; '
+            f'Длительность: {self.duration:.3f} ч.; '
+            f'Дистанция: {self.distance:.3f} км; '
+            f'Ср. скорость: {self.speed:.3f} км/ч; '
+            f'Потрачено ккал: {self.calories:.3f}.')
 
 
 class Training:
@@ -53,7 +53,8 @@ class Training:
 
     def show_training_info(self) -> InfoMessage:
         """Вернуть информационное сообщение о выполненной тренировке."""
-        message1 = InfoMessage(self.__class__.__name__,
+        message1 = InfoMessage(
+            self.__class__.__name__,
             self.duration,
             self.get_distance(),
             self.get_mean_speed(),
@@ -70,14 +71,13 @@ class Running(Training):
         super().__init__(action, duration, weight)
 
     def get_spent_calories(self) -> float:
-
         coeff_calorie_1 = 18
         coeff_calorie_2 = 20
-
-        calories_run: float = (
-            (coeff_calorie_1* Training.get_mean_speed(self) - coeff_calorie_2
-            ) * self.weight / Training.M_IN_KM * (self.duration * 60)
-        )
+        calories_run: float = ((coeff_calorie_1 *
+                                Training.get_mean_speed(self) -
+                                coeff_calorie_2) * self.weight /
+                                Training.M_IN_KM * (
+                                self.duration * 60))
         return calories_run
 
 
