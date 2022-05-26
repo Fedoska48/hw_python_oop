@@ -12,7 +12,7 @@ class InfoMessage:
             distance: float,
             speed: float,
             calories: float
-            ) -> None:
+        ) -> None:
         self.training_type: str = training_type
         self.duration: float = duration
         self.distance: float = distance
@@ -45,7 +45,7 @@ class Training:
             action: int,
             duration: float,
             weight: float,
-            ) -> None:
+        ) -> None:
         self.action: int = action
         self.duration: float = duration
         self.weight: float = weight
@@ -138,9 +138,9 @@ class Swimming(Training):
 def read_package(workout_type: str, _data: list) -> Training:
     """Прочитать данные полученные от датчиков."""
     types: dict = {
-            'RUN': Running,
-            'WLK': SportsWalking,
-            'SWM': Swimming}
+        'RUN': Running,
+        'WLK': SportsWalking,
+        'SWM': Swimming}
     if workout_type not in types:
         raise ValueError('Тип тренировки не найден')
     return types[workout_type](*_data)
