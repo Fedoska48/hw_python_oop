@@ -6,13 +6,13 @@ class InfoMessage:
     """Информационное сообщение о тренировке."""
 
     def __init__(
-                self,
-                training_type: str,
-                duration: float,
-                distance: float,
-                speed: float,
-                calories: float
-            ) -> None:
+            self,
+            training_type: str,
+            duration: float,
+            distance: float,
+            speed: float,
+            calories: float
+        ) -> None:
         self.training_type: str = training_type
         self.duration: float = duration
         self.distance: float = distance
@@ -41,11 +41,11 @@ class Training:
     COEF_6 = 2
 
     def __init__(
-                self,
-                action: int,
-                duration: float,
-                weight: float,
-            ) -> None:
+            self,
+            action: int,
+            duration: float,
+            weight: float,
+        ) -> None:
         self.action: int = action
         self.duration: float = duration
         self.weight: float = weight
